@@ -1,6 +1,7 @@
 # This file is responsible for configuring your application
 # and its dependencies with the aid of the Mix.Config module.
-use Mix.Config
+#use Mix.Config
+import Mix.Config
 
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
@@ -10,6 +11,20 @@ use Mix.Config
 
 config :hound, driver: "chrome_driver"
 
+config :jason, :json_library, Jason
+
+config :junit_formatter,
+       report_file: "homework-report_file_test#{DateTime.utc_now()}.xml",
+       report_dir: "/tmp",
+       print_report_file: true,
+       prepend_project_name?: true,
+       include_filename?: true
+
+# Configures Elixir's Logger
+#config :logger, :console,
+ #      format: "$time $metadata[$level] $message\n",
+ #      metadata: [:request_id]
+#config :logger, level: :error
 # You can configure your application as:
 #
 #     config :homework, key: :value
